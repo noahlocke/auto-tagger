@@ -43,20 +43,20 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 });
 
 function checkVendor() {
-	if (newOrder.line_items.vendor === "Madison Co-Op") {
+	if (newOrder.line_items["vendor"] === "Madison Co-Op") {
 		locationTag = "MADISON, WI";
-	} else if (newOrder.line_items.vendor === "Lancaster Co-Op") {
+	} else if (newOrder.line_items["vendor"] === "Lancaster Co-Op") {
 		locationTag = "LANCASTER, PA";
-	} else if (newOrder.line_items.vendor === "Altoona Co-Op") {
+	} else if (newOrder.line_items["vendor"] === "Altoona Co-Op") {
 		locationTag = "ALTOONA, PA";
-	} else if (newOrder.line_items.vendor === "Chambersburg Co-Op") {
+	} else if (newOrder.line_items["vendor"] === "Chambersburg Co-Op") {
 		locationTag = "CHAMBERSBURG, PA";
-	} else if (newOrder.line_items.vendor === "Billings Co-Op") {
+	} else if (newOrder.line_items["vendor"] === "Billings Co-Op") {
 		locationTag = "BILLINGS, MT";
-	} else if (newOrder.line_items.vendor === "Salt Lake City Co-Op") {
+	} else if (newOrder.line_items["vendor"] === "Salt Lake City Co-Op") {
 		locationTag = "SALT LAKE CITY, UT";
 	} 	
-	console.log(locationTag);
+	console.log(newOrder.line_items.vendor);
 }
 
 function getIDs() {

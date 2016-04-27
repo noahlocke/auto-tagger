@@ -61,7 +61,7 @@
       "grams": 5000,
       "sku": "SKU2006-001",
       "variant_title": null,
-      "vendor": null,
+      "vendor": "Madison Co-Op",
       "fulfillment_service": "manual",
       "product_id": 327475578523353102,
       "requires_shipping": true,
@@ -150,7 +150,7 @@
   "fulfillments": [],
   "refunds": [],
   "customer": {
-    "id": null,
+    "id": 6082351443,
     "email": "john@test.com",
     "accepts_marketing": false,
     "created_at": null,
