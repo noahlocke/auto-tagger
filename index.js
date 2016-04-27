@@ -56,6 +56,7 @@ function checkVendor() {
 	} else if (newOrder.line_items.vendor === "Salt Lake City Co-Op") {
 		locationTag = "SALT LAKE CITY, UT";
 	} 	
+	console.log(locationTag);
 }
 
 function getIDs() {
@@ -75,8 +76,8 @@ function tagCustomer() {
 	//  Shopify.put(newURL, put_data, function(err, data, headers){
  //  		console.log(data);
 	// });
-	console.log(newURL\n);
-	console.log(put_data\n);
+	console.log(newURL+\n);
+	console.log(put_data+\n);
 
 }
 
@@ -92,8 +93,8 @@ function tagOrder() {
 	//  Shopify.put(newURL, put_data, function(err, data, headers){
  //  		console.log(data);
 	// });
-	console.log(newURL\n);
-	console.log(put_data\n);
+	console.log(newURL+\n);
+	console.log(put_data+\n);
 }
 
 function autoTagger() {
