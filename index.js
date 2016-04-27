@@ -1,6 +1,14 @@
 var express = require('express');
 var app = express();
 var shopifyAPI = require('shopify-node-api');
+var bodyParser = require('body-parser');
+
+// create application/json parser
+var jsonParser = bodyParser.json();
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 var newOrder;
 var cityTag;
 var stateTag;
@@ -29,9 +37,9 @@ app.listen(app.get('port'), function() {
 });
 
 
-app.post('/auto-tagger', function (request, response) {
+app.post('/auto-tagger', jsonParser, function (request, response) {
 	response.sendStatus(200);
-	newOrder = JSON.parse(request);
+	newOrder = request.body;
 	autoTagger();
 });
 
