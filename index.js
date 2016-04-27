@@ -32,6 +32,7 @@ app.listen(app.get('port'), function() {
 app.post('/auto-tagger', function (request, response) {
 	response.sendStatus(200);
 	newOrder = JSON.parse(request);
+	autoTagger();
 });
 
 function checkVendor() {
@@ -95,3 +96,5 @@ function autoTagger() {
 	tagCustomer();
 	tagOrder();
 }
+
+
