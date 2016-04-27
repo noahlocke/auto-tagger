@@ -64,27 +64,29 @@ function getIDs() {
 }
 
 function tagCustomer() {
-	 var newURL = "/admin/customers/" + customerID.toString() + ".json";
+	 var newURL = "/admin/customers/" + customerID + ".json";
 	 var put_data = {
 	 	"customer": {
 	 		"id": customerID,
 	 		"tags": locationTag
 	 	}
 	 };
-	 Shopify.put(newURL, JSON.stringify(put_data), function(err, data, headers){
+	 put_data = JSON.stringify(put_data)
+	 Shopify.put(newURL, put_data, function(err, data, headers){
   		console.log(data);
 	});
 }
 
 function tagOrder() {
-	 var newURL = "/admin/orders/" + orderID.toString() + ".json";
+	 var newURL = "/admin/orders/" + orderID + ".json";
 	 var put_data = {
 	 	"order": {
 	 		"id": orderID,
 	 		"tags": locationTag
 	 	}
 	 };
-	 Shopify.put(newURL, JSON.stringify(put_data), function(err, data, headers){
+	 put_data = JSON.stringify(put_data)
+	 Shopify.put(newURL, put_data, function(err, data, headers){
   		console.log(data);
 	});
 }
