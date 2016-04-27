@@ -10,8 +10,7 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var newOrder;
-var cityTag;
-var stateTag;
+var locationTag;
 var orderID;
 
 var Shopify = new shopifyAPI({
@@ -45,23 +44,17 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 
 function checkVendor() {
 	if (newOrder.line_items.vendor === "Madison Co-Op") {
-		cityTag = "MADISON";
-		stateTag = "WI";
+		locationTag = "MADISON, WI";
 	} else if (newOrder.line_items.vendor === "Lancaster Co-Op") {
-		cityTag = "LANCASTER";
-		stateTag = "PA";
+		locationTag = "LANCASTER, PA";
 	} else if (newOrder.line_items.vendor === "Altoona Co-Op") {
-		cityTag = "ALTOONA";
-		stateTag = "PA";
+		locationTag = "ALTOONA, PA";
 	} else if (newOrder.line_items.vendor === "Chambersburg Co-Op") {
-		cityTag = "CHAMBERSBURG";
-		stateTag = "PA";
+		locationTag = "CHAMBERSBURG, PA";
 	} else if (newOrder.line_items.vendor === "Billings Co-Op") {
-		cityTag = "BILLINGS";
-		stateTag = "MT";
+		locationTag = "BILLINGS, MT";
 	} else if (newOrder.line_items.vendor === "Salt Lake City Co-Op") {
-		cityTag = "SALT LAKE CITY";
-		stateTag = "UT";
+		locationTag = "SALT LAKE CITY, UT";
 	} 	
 }
 
@@ -72,7 +65,6 @@ function getIDs() {
 
 function tagCustomer() {
 	 var newURL = "\/admin\/customers\/" + customerID + ".json";
-	 var locationTag = cityTag + ", " + stateTag;
 	 var put_data = {
 	 	"customer": {
 	 		"id": customerID,
@@ -86,7 +78,6 @@ function tagCustomer() {
 
 function tagOrder() {
 	 var newURL = "\/admin\/orders\/" + orderID + ".json";
-	 var locationTag = cityTag + ", " + stateTag;
 	 var put_data = {
 	 	"order": {
 	 		"id": orderID,
