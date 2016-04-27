@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var ShopifyAPI = require('shopify-node-api');
+var shopifyAPI = require('shopify-node-api');
 
 app.set('port', (process.env.PORT || 5000));
 
