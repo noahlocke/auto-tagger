@@ -72,7 +72,6 @@ function tagCustomer() {
 	 		"tags": locationTag
 	 	}
 	 };
-	 put_data = JSON.stringify(put_data)
 	 Shopify.put(newURL, put_data, function(err, data, headers){
   		console.log(data);
 	});
@@ -89,7 +88,6 @@ function tagOrder() {
 	 		"tags": locationTag
 	 	}
 	 };
-	 put_data = JSON.stringify(put_data)
 	 Shopify.put(newURL, put_data, function(err, data, headers){
   		console.log(data);
 	});
