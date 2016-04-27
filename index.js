@@ -18,7 +18,7 @@ app.listen(app.get('port'), function() {
 	console.log('Node app is running on port', app.get('port'));
 });
 
-app.get('/auto-tagger', function (request, response) {
+app.post('/auto-tagger', function (request, response) {
 	console.log(request);
 });
 
