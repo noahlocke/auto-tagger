@@ -72,9 +72,12 @@ function tagCustomer() {
 	 	}
 	 };
 	 put_data = JSON.stringify(put_data)
-	 Shopify.put(newURL, put_data, function(err, data, headers){
-  		console.log(data);
-	});
+	//  Shopify.put(newURL, put_data, function(err, data, headers){
+ //  		console.log(data);
+	// });
+	console.log(newURL\n);
+	console.log(put_data\n);
+
 }
 
 function tagOrder() {
@@ -86,17 +89,18 @@ function tagOrder() {
 	 	}
 	 };
 	 put_data = JSON.stringify(put_data)
-	 Shopify.put(newURL, put_data, function(err, data, headers){
-  		console.log(data);
-	});
+	//  Shopify.put(newURL, put_data, function(err, data, headers){
+ //  		console.log(data);
+	// });
+	console.log(newURL\n);
+	console.log(put_data\n);
 }
 
 function autoTagger() {
 	checkVendor();
 	getIDs();
-	//tagCustomer();
-	//tagOrder();
-	console.log(customerID, orderID, locationTag);
+	tagCustomer();
+	tagOrder();
 }
 
 
