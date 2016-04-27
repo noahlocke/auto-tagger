@@ -19,6 +19,7 @@ app.listen(app.get('port'), function() {
 });
 
 app.post('/auto-tagger', function (request, response) {
+	response.sendStatus(200);
 	console.log(request);
 });
 
