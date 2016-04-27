@@ -94,8 +94,9 @@ function tagOrder() {
 function autoTagger() {
 	checkVendor();
 	getIDs();
-	tagCustomer();
-	tagOrder();
+	//tagCustomer();
+	//tagOrder();
+	console.log(customerID, orderID, locationTag);
 }
 
 
