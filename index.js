@@ -73,10 +73,11 @@ function tagCustomer() {
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
+	 	console.log(newURL+"\n");
+		console.log(put_data+"\n");
   		console.log(data);
 	});
-	console.log(newURL+"\n");
-	console.log(put_data+"\n");
+	
 
 }
 
@@ -89,10 +90,11 @@ function tagOrder() {
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
-  		console.log(data);
+  		console.log(newURL+"\n");
+		console.log(put_data+"\n");
+		console.log(data);
 	});
-	console.log(newURL+"\n");
-	console.log(put_data+"\n");
+
 }
 
 function autoTagger() {
