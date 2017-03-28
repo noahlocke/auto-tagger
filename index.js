@@ -42,6 +42,12 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 	autoTagger();
 });
 
+app.post('/mc-add-location', jsonParser, function (request, response) {
+	response.sendStatus(200);
+	newSubscriber = request.body;
+	addLocation();
+});
+
 function checkVendor() {
 	if (newOrder.line_items[0].title.includes("Madison")) {
 		locationTag = "MADISON, WI";
@@ -102,6 +108,10 @@ function autoTagger() {
 	getIDs();
 	tagCustomer();
 	tagOrder();
+}
+
+function addLocation() {
+	
 }
 
 
