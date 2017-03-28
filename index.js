@@ -42,7 +42,7 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 	autoTagger();
 });
 
-app.post('/mc-add-location', jsonParser, function (request, response) {
+app.get('/mc-add-location', jsonParser, function (request, response) {
 	response.sendStatus(200);
 	newSubscriber = request.body;
 	addLocation();
@@ -111,7 +111,7 @@ function autoTagger() {
 }
 
 function addLocation() {
-	
+
 }
 
 
