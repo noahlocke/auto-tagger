@@ -12,6 +12,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true });
 var newOrder;
 var locationTag;
 var orderID;
+var customerEmail;
+
 
 var Shopify = new shopifyAPI({
 	shop: 'kwee-jack-fish-co-llc', // MYSHOP.myshopify.com 
@@ -64,12 +66,13 @@ function checkVendor() {
 	} else if (newOrder.line_items[0].title.includes("Florham")) {
 		locationTag = "FLORHAM PARK, NJ";
 	} 	
-	console.log(locationTag);
+	
 }
 
 function getIDs() {
 	 orderID = newOrder.id;
 	 customerID = newOrder.customer.id;
+	 customerEmail = newOrder.email;
 }
 
 function tagCustomer() {
@@ -110,6 +113,7 @@ function autoTagger() {
 	getIDs();
 	tagCustomer();
 	tagOrder();
+	console.log(customerEmail);
 }
 
 function addLocation(email) {
