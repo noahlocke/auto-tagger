@@ -45,9 +45,9 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 
 app.post('/mc-add-location', urlencodedParser, function (request, response) {
 	response.sendStatus(200);
-	var userEmail = request.body.data[email];
-	var userLocation = request.body.data[merges][GROUPINGS][0][groups];
-	addLocation();
+	var userEmail = request.body.data.email;
+	var userLocation = request.body.data.mergers.GROUPINGS.[0].groups;
+	addLocation(userEmail,userLocation);
 });
 
 function checkVendor() {
