@@ -42,7 +42,7 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 	autoTagger();
 });
 
-app.get('/mc-add-location', function (request, response) {
+app.post('/mc-add-location', function (request, response) {
 	response.sendStatus(200);
 	userEmail = request.query.data[email];
 	userLocation = request.query.data[merges][GROUPINGS][0][groups];
