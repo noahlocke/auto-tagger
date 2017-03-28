@@ -46,8 +46,8 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 app.post('/mc-add-location', urlencodedParser, function (request, response) {
 	response.sendStatus(200);
 	var userEmail = request.body.data.email;
-	var userLocation = request.body.data.mergers.GROUPINGS.[0].groups;
-	addLocation(userEmail,userLocation);
+	//var userLocation = request.body.data.mergers.GROUPINGS.[0].groups;
+	addLocation(userEmail);
 });
 
 function checkVendor() {
@@ -112,8 +112,8 @@ function autoTagger() {
 	tagOrder();
 }
 
-function addLocation() {
-	console.log(userEmail + " has the location of " + userLocation);
+function addLocation(email) {
+	console.log(email + " has subscribed!");
 }
 
 
