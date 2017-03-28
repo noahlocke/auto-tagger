@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 var newOrder;
 var locationTag;
@@ -22,6 +22,7 @@ var Shopify = new shopifyAPI({
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
+
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -42,10 +43,10 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 	autoTagger();
 });
 
-app.post('/mc-add-location', function (request, response) {
+app.post('/mc-add-location', urlencodedParser, function (request, response) {
 	response.sendStatus(200);
-	userEmail = request.query.data[email];
-	userLocation = request.query.data[merges][GROUPINGS][0][groups];
+	userEmail = request.body.data[email];
+	userLocation = request.body.data[merges][GROUPINGS][0][groups];
 	addLocation();
 });
 
