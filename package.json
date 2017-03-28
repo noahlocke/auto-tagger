@@ -13,7 +13,8 @@
     "body-parser": "^1.15.0",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "shopify-node-api": "^1.6.3"
+    "shopify-node-api": "^1.6.3",
+    "crypto": "0.0.3"
   },
   "repository": {
     "type": "git",

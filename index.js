@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var shopifyAPI = require('shopify-node-api');
 var bodyParser = require('body-parser');
+var crypto = require('crypto');
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -13,7 +14,7 @@ var newOrder;
 var locationTag;
 var orderID;
 var customerEmail;
-
+var emailHash;
 
 var Shopify = new shopifyAPI({
 	shop: 'kwee-jack-fish-co-llc', // MYSHOP.myshopify.com 
