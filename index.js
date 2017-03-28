@@ -43,7 +43,7 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 });
 
 function checkVendor() {
-	if (newOrder.line_items[0].vendor === "Madison Co-Op") {
+	if (newOrder.line_items[0].title.includes("Madison")) {
 		locationTag = "MADISON, WI";
 	} else if (newOrder.line_items[0].vendor === "Lancaster Co-Op") {
 		locationTag = "LANCASTER, PA";
