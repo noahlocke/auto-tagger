@@ -42,9 +42,10 @@ app.post('/auto-tagger', jsonParser, function (request, response) {
 	autoTagger();
 });
 
-app.get('/mc-add-location', jsonParser, function (request, response) {
+app.get('/mc-add-location', function (request, response) {
 	response.sendStatus(200);
-	newSubscriber = request.body;
+	userEmail = request.query.data[email];
+	userLocation = request.query.data[merges][GROUPINGS][0][groups];
 	addLocation();
 });
 
@@ -111,7 +112,7 @@ function autoTagger() {
 }
 
 function addLocation() {
-
+	console.log(userEmail + " has the location of " + userLocation);
 }
 
 
