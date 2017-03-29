@@ -83,7 +83,7 @@ function tagCustomer() {
 	 	"customer": {
 	 		"id": customerID,
 	 		"tags": locationTag,
-	 		"buyer_accepts_marketing": true
+	 		"accepts_marketing": true
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
@@ -101,7 +101,7 @@ function tagOrder() {
 	 	"order": {
 	 		"id": orderID,
 	 		"tags": locationTag,
-
+	 		"buyer_accepts_marketing": true
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
