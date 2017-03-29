@@ -74,6 +74,7 @@ function getIDs() {
 	 orderID = newOrder.id;
 	 customerID = newOrder.customer.id;
 	 customerEmail = newOrder.email;
+	 buyerMarketingStatus = newOrder.buyer_accepts_marketing;
 }
 
 function tagCustomer() {
@@ -81,7 +82,8 @@ function tagCustomer() {
 	 var put_data = {
 	 	"customer": {
 	 		"id": customerID,
-	 		"tags": locationTag
+	 		"tags": locationTag,
+	 		"buyer_accepts_marketing": true
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
@@ -98,7 +100,8 @@ function tagOrder() {
 	 var put_data = {
 	 	"order": {
 	 		"id": orderID,
-	 		"tags": locationTag
+	 		"tags": locationTag,
+
 	 	}
 	 };
 	 Shopify.put(newURL, put_data, function(err, data, headers){
